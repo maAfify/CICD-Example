@@ -1,4 +1,4 @@
-Mathew Reeze plural sight course 
+Mathew Reez plural sight course 
 # Clean Architecture Demo
 A sample application for [Clean Architecture: Patterns, Practices, and Principles](https://pluralsight.pxf.io/clean-architecture) using Microsoft .NET Core 6.0.
 
