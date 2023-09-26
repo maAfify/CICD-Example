@@ -14,7 +14,7 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y dotnet-sdk-7.0
 
-# Install SonarScanner
+# Install SonarScanner which could be installed also by jenkins plugin itself
 RUN apt-get install -y unzip
 RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip -O sonar-scanner.zip && \
     unzip sonar-scanner.zip -d /opt && \
