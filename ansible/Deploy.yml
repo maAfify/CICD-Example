@@ -1,0 +1,26 @@
+---
+- name: Deploy Application
+  hosts: ansible  # Replace with the target server or group of servers
+  become: yes
+  tasks:
+    - name: Build Docker Image
+      command: docker build -t cicdfinalproject:latest ../dockerfile
+      # Add other build options if needed
+
+    - name: Push Docker Image to Registry
+      command: docker push cicdfinalproject:latest
+      # Add Docker login and other registry authentication tasks if needed
+
+    - name: Stop and Remove Previous Containers
+      docker_container:
+        name: DeployedcicdProj
+        state: absent
+      ignore_errors: yes
+
+    - name: Run New Docker Container
+      docker_container:
+        name: DeployedcicdProj
+        image: cicdfinalproject:latest
+        ports:
+          - "80:80"
+          # Add other container options if needed

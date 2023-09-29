@@ -1,0 +1,10 @@
+FROM ubuntu:latest
+
+# Install Ansible
+RUN apt-get update && apt-get install -y ansible
+
+# Set up your Ansible environment if needed
+ENV SSH_USER=mafify
+
+# Command to keep the container running
+CMD ["tail", "-f", "/dev/null"]

@@ -1,12 +1,19 @@
 version: '3'
 services:
   jenkins:
-    image: jenkinssqnet
+    image: mafify/jenkinssqnet
     ports:
       - "8080:8080"
     networks:
       - my-network
 
+  ansible:
+    image: mafify/myansible
+    ports:
+      - "8000:8000"
+    networks:
+      - my-network
+      
   sonarqube:
     image: sonarqube:latest
     ports:
