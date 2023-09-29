@@ -1,4 +1,3 @@
----
 - name: Deploy Application
   hosts: ansible  # Replace with the target server or group of servers
   become: yes
